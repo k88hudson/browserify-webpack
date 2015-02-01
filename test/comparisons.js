@@ -54,8 +54,22 @@ describe('Browserify vs Webpack', function() {
                     b: path.join(destFolder, `${filename}.browserify.js`),
                     w: path.join(destFolder, `${filename}.webpack.js`)
                 };
-                var command = `browserify -e ${srcFile} -t [reactify --es6 --target es5] | uglifyjs --compress --mangle > ${destPath.b}` +
+
+                var cOptions = {
+                    sequences: true,
+                    dead_code: true,
+                    conditionals: true,
+                    booleans: true,
+                    unused: true,
+                    if_return: true,
+                    join_vars: true,
+                    drop_console: true
+                };
+                var compressorString = Object.keys(cOptions, (key) => `${key}=${cOptions[key]}`).join(',');
+
+                var command = `browserify -e ${srcFile} -t [reactify --es6 --target es5] | uglifyjs -c ${compressorString} --mangle > ${destPath.b}` +
                 `&& webpack ${srcFile} ${destPath.w} -p --config ${webpackConfig}`;
+
                 exec(command, function (err) {
                     if (err) return callback(err);
 
