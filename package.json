@@ -1,0 +1,38 @@
+{
+  "name": "browserify-webpack",
+  "version": "0.0.0",
+  "description": "This is **not** a general-purpose argument about whether browserify or webpack is better, but rather some reduced test cases that are useful specific to the Webmaker App project. https://github.com/mozilla/webmaker-app.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R spec --compilers js:mocha-traceur"
+  },
+  "author": "",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "async": "^0.9.0",
+    "fs-extra": "^0.16.3",
+    "mocha": "^2.1.0",
+    "mocha-traceur": "^2.1.0",
+    "webpack": "^1.5.3",
+    "browserify": "^8.1.2",
+    "jsx-loader": "^0.12.2",
+    "es6-loader": "^0.2.0",
+    "reactify": "^1.0.0",
+    "colors": "^1.0.3",
+    "react-router": "^0.11.6",
+    "xhr": "1.16.1",
+    "webmaker-login-ux": "1.3.4",
+    "localforage": "1.1.1",
+    "handlebars": "^2.0.0",
+    "transform-loader": "^0.2.1",
+    "brfs": "^1.3.0",
+    "watchify": "^2.3.0"
+  },
+  "dependencies": {
+    "react": "^0.12.2",
+    "firebase": "^2.1.2"
+  }
+}
