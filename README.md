@@ -10,7 +10,20 @@ For production, my goal was to perform as many optimizations as possible to redu
 
 Browserify
 ```bash
-browserify -e ${srcFile} -t [reactify --es6 --target es5] | uglifyjs --compress --mangle > ${destFile}
+browserify -e ${srcFile} -t [reactify --es6 --target es5] | uglifyjs -c ${compressorString} --mangle > ${destFile}
+```
+Compressor options:
+```js
+{
+    sequences: true,
+    dead_code: true,
+    conditionals: true,
+    booleans: true,
+    unused: true,
+    if_return: true,
+    join_vars: true,
+    drop_console: true
+}
 ```
 
 Webpack
