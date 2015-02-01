@@ -19,3 +19,35 @@ webpack ${srcFile} ${destFile} -p --config ${webpackConfig}`
 ```
 
 #### Results
+```
+==============
+Single react require.
+==============
+BROWSERIFY 167.899kb
+WEBPACK    150.335kb
+( Diff: 12%, or 18kb )
+
+
+==============
+React with addons.
+==============
+BROWSERIFY 184.758kb
+WEBPACK    165.329kb
+( Diff: 12%, or 19kb )
+
+
+==============
+React with addons, react-router, and firebase.
+==============
+BROWSERIFY 367.012kb
+WEBPACK    341.378kb
+( Diff: 8%, or 26kb )
+
+
+==============
+Complete wm.app dependency tree
+==============
+BROWSERIFY 574.526kb
+WEBPACK    494.073kb
+( Diff: 16%, or 80kb )
+```
