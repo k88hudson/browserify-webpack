@@ -67,7 +67,7 @@ describe('Browserify vs Webpack', function() {
                 };
                 var compressorString = Object.keys(cOptions, (key) => `${key}=${cOptions[key]}`).join(',');
 
-                var command = `browserify -e ${srcFile} -t [reactify --es6 --target es5] | uglifyjs -c ${compressorString} --mangle > ${destPath.b}` +
+                var command = `browserify -e ${srcFile} -t [reactify --es6 --target es5] | bundle-collapser | uglifyjs -c ${compressorString} --mangle > ${destPath.b}` +
                 `&& webpack ${srcFile} ${destPath.w} -p --config ${webpackConfig}`;
 
                 exec(command, function (err) {
